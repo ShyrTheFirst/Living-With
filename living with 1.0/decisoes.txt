@@ -1,0 +1,31 @@
+escolher roupas -
+camisa verde
+camisa amarela
+camisa vermelha
+camisa preta
+
+escolher café da manhã -
+pão e leite
+bolo e leite
+misto quente e suco
+torta salgada e suco
+
+como ir trabalhar -
+a pé
+de carro
+de onibus
+de uber
+
+*escolha do evento aleatorio no trabalho*
+
+jantar -
+arroz e bife
+macarrão com queijo
+lasanha 4 queijos
+comida mexicana
+
+opções distração - 
+assistir tv
+ler livro
+navegar na internet
+jogar no celular
