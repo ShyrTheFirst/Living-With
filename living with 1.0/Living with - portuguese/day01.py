@@ -390,8 +390,7 @@ def day01():
                         
     while v.no_trabalho == True:
         fade(1280,720)
-        SCREEN.fill((0,0,0))
-        pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+        SCREEN.fill((255,255,255))
         pygame.display.update()
         ########################################################################################
         print("saiu para o trabalho")
@@ -412,7 +411,7 @@ def day01():
                  v.peloop = False
              else:
                  continue
-             #trabalho()
+             trabalho()
         if v.carro == True:
             carrinho = pygame.image.load(r'imagens\carro.png')
             fundo_rua = pygame.image.load(r'imagens\fundo rua.png')
@@ -428,7 +427,7 @@ def day01():
                  v.peloop = False
              else:
                  continue
-             #trabalho()
+             trabalho()
         if v.onibus == True:
             onibus = pygame.image.load(r'imagens\onibus.png')
             fundo_rua = pygame.image.load(r'imagens\fundo rua.png')
@@ -444,7 +443,7 @@ def day01():
                  v.peloop = False
              else:
                  continue
-             #trabalho()
+             trabalho()
         if v.uber == True:
             uber = pygame.image.load(r'imagens\uber.png')
             fundo_rua = pygame.image.load(r'imagens\fundo rua.png')
@@ -460,13 +459,13 @@ def day01():
                  v.peloop = False
              else:
                  continue
-             #trabalho()
-        v.no_trabalho = False
-        v.jantar = True
+             trabalho()
         
     while v.jantar == True:
         reta_selecionar =pygame.image.load(r'imagens\botao_selecionar.png')
         SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
+        SCREEN.blit(grid_jogo, (0,0))
+        SCREEN.blit(char1, (x_char_sair,y_char))
         pygame.display.update()
         #primeiro botao
         botao01 = 510
