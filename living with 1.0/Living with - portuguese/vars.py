@@ -9,3 +9,10 @@ distrair = False
 depressao_ataca = False
 dormir = False
 despertar = False
+pe = False
+carro = False
+onibus = False
+uber = False
+
+pex = 100
+peloop = True

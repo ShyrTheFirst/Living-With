@@ -1,12 +1,14 @@
 import pygame,random, sys
 import vars as v
 from pygame_functions import *
+from no_trabalho import trabalho
 #from evento_aleatorio import evento
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GRAY = (50,50,50)
 RED = (255,0,0)
+
 
 WINDOW_WIDTH = 1280
 WINDOW_HEIGHT = 720
@@ -354,6 +356,7 @@ def day01():
                     localdoy = y_selecionar
                     if localdoy == botao01:
                         #a pe
+                        v.pe = True
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char1, (x_char_sair,y_char))
                         pygame.display.update()
@@ -361,6 +364,7 @@ def day01():
                         v.no_trabalho = True
                     elif localdoy == botao03:
                         #carro
+                        v.carro = True
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char, (x_char_sair,y_char))
                         pygame.display.update()
@@ -368,6 +372,7 @@ def day01():
                         v.no_trabalho = True
                     elif localdoy == botao04:
                         #onibus
+                        v.onibus = True
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char1, (x_char_sair,y_char))
                         pygame.display.update()
@@ -375,6 +380,7 @@ def day01():
                         v.no_trabalho = True
                     elif localdoy == botao05:
                         #uber
+                        v.uber = True
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char1, (x_char_sair,y_char))
                         pygame.display.update()
@@ -389,9 +395,72 @@ def day01():
         pygame.display.update()
         ########################################################################################
         print("saiu para o trabalho")
-        #criar animação de indo trabalhar (conforme opção do jogador)
-        #criar trabalho
-        #criar situação aleatoria
+        
+        if v.pe == True:
+            a_pe = pygame.image.load(r'imagens\char lado.png')
+            fundo_rua = pygame.image.load(r'imagens\fundo rua.png')
+            rua = pygame.image.load(r'imagens\rua.png')
+            
+            while v.peloop == True:
+             SCREEN.blit(fundo_rua, (0,0))
+             SCREEN.blit(rua,(0,0))
+             SCREEN.blit(a_pe,(v.pex,200))
+             pygame.display.update()
+             pygame.time.wait(300)
+             v.pex += 50
+             if v.pex == 1100:
+                 v.peloop = False
+             else:
+                 continue
+             #trabalho()
+        if v.carro == True:
+            carrinho = pygame.image.load(r'imagens\carro.png')
+            fundo_rua = pygame.image.load(r'imagens\fundo rua.png')
+            rua = pygame.image.load(r'imagens\rua.png')
+            while v.peloop == True:
+             SCREEN.blit(fundo_rua, (0,0))
+             SCREEN.blit(rua,(0,0))
+             SCREEN.blit(carrinho,(v.pex,200))
+             pygame.display.update()
+             pygame.time.wait(300)
+             v.pex += 100
+             if v.pex == 1100:
+                 v.peloop = False
+             else:
+                 continue
+             #trabalho()
+        if v.onibus == True:
+            onibus = pygame.image.load(r'imagens\onibus.png')
+            fundo_rua = pygame.image.load(r'imagens\fundo rua.png')
+            rua = pygame.image.load(r'imagens\rua.png')
+            while v.peloop == True:
+             SCREEN.blit(fundo_rua, (0,0))
+             SCREEN.blit(rua,(0,0))
+             SCREEN.blit(onibus,(v.pex,200))
+             pygame.display.update()
+             pygame.time.wait(300)
+             v.pex += 100
+             if v.pex == 1100:
+                 v.peloop = False
+             else:
+                 continue
+             #trabalho()
+        if v.uber == True:
+            uber = pygame.image.load(r'imagens\uber.png')
+            fundo_rua = pygame.image.load(r'imagens\fundo rua.png')
+            rua = pygame.image.load(r'imagens\rua.png')
+            while v.peloop == True:
+             SCREEN.blit(fundo_rua, (0,0))
+             SCREEN.blit(rua,(0,0))
+             SCREEN.blit(uber,(v.pex,200))
+             pygame.display.update()
+             pygame.time.wait(300)
+             v.pex += 100
+             if v.pex == 1100:
+                 v.peloop = False
+             else:
+                 continue
+             #trabalho()
         v.no_trabalho = False
         v.jantar = True
         
