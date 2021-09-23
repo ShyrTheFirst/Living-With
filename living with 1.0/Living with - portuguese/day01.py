@@ -26,7 +26,15 @@ def day01():
     pygame.init()
     pygame.font.init()
     pygame.mixer.init()
+    #definindo sons
     background_music = pygame.mixer.Sound('audio\musica triste - Dream away (No Vocals).mp3')
+    reclamacao = pygame.mixer.Sound(r'audio\reclamar.mp3')
+    sussurros = pygame.mixer.Sound('audio\sussurros.mp3')
+    grito01 = pygame.mixer.Sound('audio\grito 01.mp3')
+    grito02 = pygame.mixer.Sound('audio\grito 02.mp3')
+    som_carro = pygame.mixer.Sound(r'audio\som carro.mp3')
+    som_cidade = pygame.mixer.Sound(r'audio\som cidade.mp3')
+    #sons definidos
     pygame.mixer.Sound.play(background_music)
     pygame.mixer.Sound.set_volume(background_music,2)
     font_default = pygame.font.get_default_font()
@@ -41,7 +49,6 @@ def day01():
         pygame.mixer.init()
         pygame.mixer.music.load(r'audio\despertador.mp3')
         pygame.mixer.music.play()
-        #criar som de despertador
         despertar1 = fonte2.render("Mais um dia que começa...", 1, WHITE)
         SCREEN.blit(despertar1, (100,100))
         pygame.display.update()
@@ -395,6 +402,8 @@ def day01():
         fade(1280,720)
         SCREEN.fill((255,255,255))
         pygame.display.update()
+        pygame.mixer.Sound.play(som_cidade)
+        pygame.mixer.Sound.set_volume(som_cidade,5)
         v.peloop = True
         v.pex = 100
                 
@@ -411,11 +420,15 @@ def day01():
              pygame.time.wait(300)
              v.pex += 50
              if v.pex == 1100:
+                 
                  v.peloop = False
              else:
                  continue
+             pygame.mixer.Sound.stop(som_cidade)
              trabalho()
         if v.carro == True:
+            pygame.mixer.Sound.play(som_carro)
+            pygame.mixer.Sound.set_volume(som_carro,5)
             carrinho = pygame.image.load(r'imagens\carro.png')
             fundo_rua = pygame.image.load(r'imagens\fundo rua.png')
             rua = pygame.image.load(r'imagens\rua.png')
@@ -430,8 +443,12 @@ def day01():
                  v.peloop = False
              else:
                  continue
+             pygame.mixer.Sound.stop(som_cidade)
+             pygame.mixer.Sound.stop(som_carro)
              trabalho()
         if v.onibus == True:
+            pygame.mixer.Sound.play(som_carro)
+            pygame.mixer.Sound.set_volume(som_carro,5)
             onibus = pygame.image.load(r'imagens\onibus.png')
             fundo_rua = pygame.image.load(r'imagens\fundo rua.png')
             rua = pygame.image.load(r'imagens\rua.png')
@@ -446,8 +463,12 @@ def day01():
                  v.peloop = False
              else:
                  continue
+             pygame.mixer.Sound.stop(som_cidade)
+             pygame.mixer.Sound.stop(som_carro)
              trabalho()
         if v.uber == True:
+            pygame.mixer.Sound.play(som_carro)
+            pygame.mixer.Sound.set_volume(som_carro,5)
             uber = pygame.image.load(r'imagens\uber.png')
             fundo_rua = pygame.image.load(r'imagens\fundo rua.png')
             rua = pygame.image.load(r'imagens\rua.png')
@@ -462,6 +483,8 @@ def day01():
                  v.peloop = False
              else:
                  continue
+             pygame.mixer.Sound.stop(som_cidade)
+             pygame.mixer.Sound.stop(som_carro)
              trabalho()
         
     while v.jantar == True:
@@ -657,6 +680,9 @@ def day01():
                         v.depressao_ataca = True
 
     while v.depressao_ataca == True:
+        
+        pygame.mixer.Sound.play(reclamacao)
+        pygame.mixer.Sound.set_volume(reclamacao,4)
         palavras1 = fonte1.render("Amor", 1, BLACK)
         SCREEN.blit(palavras1, (300,300))
         pygame.display.update()
@@ -669,6 +695,8 @@ def day01():
         SCREEN.blit(palavras3, (100,300))
         pygame.display.update()
         pygame.time.wait(300)
+        pygame.mixer.Sound.play(sussurros)
+        pygame.mixer.Sound.set_volume(sussurros,8)
         palavras4 = fonte1.render("Vida", 1, BLACK)
         SCREEN.blit(palavras4, (900,200))
         pygame.display.update()
@@ -681,6 +709,7 @@ def day01():
         SCREEN.blit(palavras6, (700,200))
         pygame.display.update()
         pygame.time.wait(300)
+        pygame.mixer.Sound.set_volume(reclamacao,6)
         palavras7 = fonte1.render("Passado", 1, BLACK)
         SCREEN.blit(palavras7, (1100,100))
         pygame.display.update()
@@ -701,6 +730,7 @@ def day01():
         SCREEN.blit(palavras11, (600,100))
         pygame.display.update()
         pygame.time.wait(300)
+        pygame.mixer.Sound.set_volume(reclamacao,8)
         palavras12 = fonte3.render("Filhos", 1, BLACK)
         SCREEN.blit(palavras12, (700,200))
         pygame.display.update()
@@ -747,6 +777,7 @@ def day01():
         SCREEN.blit(palavras23, (50,30))
         pygame.display.update()
         pygame.time.wait(300)
+        pygame.mixer.Sound.set_volume(reclamacao,16)
         palavras24 = fonte3.render("Vida a viver", 1, BLACK)
         SCREEN.blit(palavras24, (10,50))
         pygame.display.update()
@@ -777,6 +808,7 @@ def day01():
         SCREEN.blit(palavras31, (60,200))
         pygame.display.update()
         pygame.time.wait(300)
+        pygame.mixer.Sound.set_volume(reclamacao,20)
         palavras32 = fonte2.render("O Melhor", 1, BLACK)
         SCREEN.blit(palavras32, (100,100))
         pygame.display.update()
@@ -786,6 +818,9 @@ def day01():
         pygame.display.update()
         pygame.time.wait(300)
         pygame.mixer.Sound.stop(background_music)
+        pygame.mixer.Sound.stop(reclamacao)
+        pygame.mixer.Sound.play(grito01)
+        pygame.mixer.Sound.set_volume(grito01,50)
         fade(1280,720)
         grid_preta = pygame.image.load(r'imagens\telapreta.png')
         SCREEN.blit(grid_preta, (0,0))
