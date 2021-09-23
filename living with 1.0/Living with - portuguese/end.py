@@ -22,6 +22,10 @@ def end():
 def goodend():
     pygame.init()
     pygame.font.init()
+    pygame.mixer.init()
+    background_music = pygame.mixer.Sound('audio\musica triste - Dream away (No Vocals).mp3')
+    pygame.mixer.Sound.play(background_music)
+    pygame.mixer.Sound.set_volume(background_music,2)
     font_default = pygame.font.get_default_font()
     fonte = pygame.font.SysFont(font_default, 50)
     SCREEN = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
@@ -44,11 +48,16 @@ def goodend():
     v.weekloop = False
     v.start = True
     while v.start == True:
+        pygame.mixer.Sound.stop(background_music)
         menu()
 
 def badend():
     pygame.init()
     pygame.font.init()
+    pygame.mixer.init()
+    background_music = pygame.mixer.Sound('audio\musica triste - Dream away (No Vocals).mp3')
+    pygame.mixer.Sound.play(background_music)
+    pygame.mixer.Sound.set_volume(background_music,2)
     font_default = pygame.font.get_default_font()
     fonte = pygame.font.SysFont(font_default, 50)
     SCREEN = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
@@ -56,6 +65,7 @@ def badend():
     finalruim = pygame.image.load(r'imagens\finalruim.png')
     SCREEN.blit(finalruim, (0,0))
     pygame.display.update()
+    
     
     for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -66,10 +76,15 @@ def badend():
     frase02 = fonte.render("Infelizmente... o fim chegou.",1, WHITE)
     SCREEN.blit(frase02, (100,110))
     pygame.display.update()
+    grito1 = pygame.mixer.Sound('audio\grito 01.mp3')
+    pygame.mixer.Sound.play(grito1)
+    pygame.mixer.Sound.set_volume(grito1,5)
     pygame.time.wait(3000)
     depre = 0
     v.weekloop = False
     v.start = True
     while v.start == True:
+        pygame.mixer.Sound.stop(background_music)
+        pygame.mixer.Sound.stop(grito1)
         menu()
     

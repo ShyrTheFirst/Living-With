@@ -1,3 +1,4 @@
+
 import pygame,random, sys
 import vars as v
 from pygame_functions import *
@@ -25,6 +26,17 @@ def fade(width, height):
 def day05():
     pygame.init()
     pygame.font.init()
+    #definindo sons
+    background_music = pygame.mixer.Sound('audio\musica triste - Dream away (No Vocals).mp3')
+    reclamacao = pygame.mixer.Sound(r'audio\reclamar.mp3')
+    sussurros = pygame.mixer.Sound('audio\sussurros.mp3')
+    grito01 = pygame.mixer.Sound('audio\grito 01.mp3')
+    grito02 = pygame.mixer.Sound('audio\grito 02.mp3')
+    som_carro = pygame.mixer.Sound(r'audio\som carro.mp3')
+    som_cidade = pygame.mixer.Sound(r'audio\som cidade.mp3')
+    #sons definidos
+    pygame.mixer.Sound.play(background_music)
+    pygame.mixer.Sound.set_volume(background_music,2)
     font_default = pygame.font.get_default_font()
     fonte1 = pygame.font.SysFont(font_default, 30)
     fonte2 = pygame.font.SysFont(font_default, 50)
@@ -427,6 +439,8 @@ def day05():
         fade(1280,720)
         SCREEN.fill((255,255,255))
         pygame.display.update()
+        pygame.mixer.Sound.play(som_cidade)
+        pygame.mixer.Sound.set_volume(som_cidade,5)
         v.peloop = True
         v.pex = 100
                 
@@ -446,6 +460,7 @@ def day05():
                  v.peloop = False
              else:
                  continue
+             pygame.mixer.Sound.stop(som_cidade)
              trabalho()
         
         
