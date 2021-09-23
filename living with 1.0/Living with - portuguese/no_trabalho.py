@@ -55,12 +55,13 @@ def trabalho():
              pygame.time.wait(3000)
              SCREEN.fill(BLACK)
              pygame.display.update()
-             v.no_trabalho = False
-             v.jantar = True
              v.uber = False
              v.onibus = False
              v.carro = False
              v.pe = False
+             v.no_trabalho = False
+             v.jantar = True
+             
          if reclamar_rect.collidepoint(mouseposition):
              v.depre -= 1
              frase04 = fonte.render("Você está se sentindo um pouco melhor", 1, WHITE)
@@ -69,12 +70,13 @@ def trabalho():
              pygame.time.wait(3000)
              SCREEN.fill(BLACK)
              pygame.display.update()
-             v.no_trabalho = False
-             v.jantar = True
              v.uber = False
              v.onibus = False
              v.carro = False
              v.pe = False
+             v.no_trabalho = False
+             v.jantar = True
+             
      
      
      
