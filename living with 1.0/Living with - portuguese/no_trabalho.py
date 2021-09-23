@@ -8,10 +8,7 @@ GRAY = (50,50,50)
 
 WINDOW_WIDTH = 1280
 WINDOW_HEIGHT = 720
-v.uber = False
-v.onibus = False
-v.carro = False
-v.pe = False
+
 
 
 def trabalho():
@@ -60,6 +57,10 @@ def trabalho():
              pygame.display.update()
              v.no_trabalho = False
              v.jantar = True
+             v.uber = False
+             v.onibus = False
+             v.carro = False
+             v.pe = False
          if reclamar_rect.collidepoint(mouseposition):
              v.depre -= 1
              frase04 = fonte.render("Você está se sentindo um pouco melhor", 1, WHITE)
@@ -70,6 +71,10 @@ def trabalho():
              pygame.display.update()
              v.no_trabalho = False
              v.jantar = True
+             v.uber = False
+             v.onibus = False
+             v.carro = False
+             v.pe = False
      
      
      
