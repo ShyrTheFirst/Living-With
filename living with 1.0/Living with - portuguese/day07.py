@@ -291,7 +291,7 @@ def day07():
                         v.jantar = True
         
     while v.jantar == True:
-        pygame.time.wait(3000)
+        pygame.time.wait(1000)
         reta_selecionar =pygame.image.load(r'imagens\botao_selecionar.png')
         SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
         pygame.display.update()
