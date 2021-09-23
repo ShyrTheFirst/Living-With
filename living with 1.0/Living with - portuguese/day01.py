@@ -25,6 +25,9 @@ def fade(width, height):
 def day01():
     pygame.init()
     pygame.font.init()
+    pygame.mixer.init()
+    pygame.mixer.Sound.play(pygame.mixer.Sound('audio\musica triste - Dream away (No Vocals).mp3'))
+    
     font_default = pygame.font.get_default_font()
     fonte1 = pygame.font.SysFont(font_default, 30)
     fonte2 = pygame.font.SysFont(font_default, 50)
