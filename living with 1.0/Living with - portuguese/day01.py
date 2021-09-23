@@ -2,7 +2,6 @@ import pygame,random, sys
 import vars as v
 from pygame_functions import *
 from no_trabalho import trabalho
-#from evento_aleatorio import evento
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -66,7 +65,7 @@ def day01():
     y_pergunta = 255
     
     local_opcoes = pygame.Rect(250,500,160,110)
-    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
     grid_jogo = pygame.image.load(r'imagens\casa.png')
     SCREEN.blit(grid_jogo, (0,0))
     char = pygame.image.load(r'imagens\char.png')
@@ -127,19 +126,19 @@ def day01():
                 #mover para escolher botao:
                 if event.key == pygame.K_DOWN and y_selecionar < 585:
                     y_selecionar += 25
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 elif event.key == pygame.K_DOWN and y_selecionar >= 585:
                     y_selecionar = 510
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 if event.key == pygame.K_UP and y_selecionar > 510:
                     y_selecionar -= 25
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 elif event.key == pygame.K_UP and y_selecionar <= 510:
                     y_selecionar = 585
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 #identificar qual botao esta sendo apertado:
                 if event.key == pygame.K_RETURN:
@@ -244,19 +243,19 @@ def day01():
                 #mover para escolher botao:
                 if event.key == pygame.K_DOWN and y_selecionar < 585:
                     y_selecionar += 25
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 elif event.key == pygame.K_DOWN and y_selecionar >= 585:
                     y_selecionar = 510
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 if event.key == pygame.K_UP and y_selecionar > 510:
                     y_selecionar -= 25
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 elif event.key == pygame.K_UP and y_selecionar <= 510:
                     y_selecionar = 585
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 #identificar qual botao esta sendo apertado:
                 if event.key == pygame.K_RETURN:
@@ -337,19 +336,19 @@ def day01():
                 #mover para escolher botao:
                 if event.key == pygame.K_DOWN and y_selecionar < 585:
                     y_selecionar += 25
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 elif event.key == pygame.K_DOWN and y_selecionar >= 585:
                     y_selecionar = 510
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 if event.key == pygame.K_UP and y_selecionar > 510:
                     y_selecionar -= 25
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 elif event.key == pygame.K_UP and y_selecionar <= 510:
                     y_selecionar = 585
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 #identificar qual botao esta sendo apertado:
                 if event.key == pygame.K_RETURN:
@@ -392,9 +391,9 @@ def day01():
         fade(1280,720)
         SCREEN.fill((255,255,255))
         pygame.display.update()
-        ########################################################################################
-        print("saiu para o trabalho")
-        
+        v.peloop = True
+        v.pex = 100
+                
         if v.pe == True:
             a_pe = pygame.image.load(r'imagens\char lado.png')
             fundo_rua = pygame.image.load(r'imagens\fundo rua.png')
@@ -402,7 +401,7 @@ def day01():
             
             while v.peloop == True:
              SCREEN.blit(fundo_rua, (0,0))
-             SCREEN.blit(rua,(0,0))
+             SCREEN.blit(rua,(0,-10))
              SCREEN.blit(a_pe,(v.pex,200))
              pygame.display.update()
              pygame.time.wait(300)
@@ -418,8 +417,8 @@ def day01():
             rua = pygame.image.load(r'imagens\rua.png')
             while v.peloop == True:
              SCREEN.blit(fundo_rua, (0,0))
-             SCREEN.blit(rua,(0,0))
-             SCREEN.blit(carrinho,(v.pex,200))
+             SCREEN.blit(rua,(0,-10))
+             SCREEN.blit(carrinho,(v.pex,180))
              pygame.display.update()
              pygame.time.wait(300)
              v.pex += 100
@@ -434,8 +433,8 @@ def day01():
             rua = pygame.image.load(r'imagens\rua.png')
             while v.peloop == True:
              SCREEN.blit(fundo_rua, (0,0))
-             SCREEN.blit(rua,(0,0))
-             SCREEN.blit(onibus,(v.pex,200))
+             SCREEN.blit(rua,(0,-10))
+             SCREEN.blit(onibus,(v.pex,120))
              pygame.display.update()
              pygame.time.wait(300)
              v.pex += 100
@@ -450,8 +449,8 @@ def day01():
             rua = pygame.image.load(r'imagens\rua.png')
             while v.peloop == True:
              SCREEN.blit(fundo_rua, (0,0))
-             SCREEN.blit(rua,(0,0))
-             SCREEN.blit(uber,(v.pex,200))
+             SCREEN.blit(rua,(0,-10))
+             SCREEN.blit(uber,(v.pex,180))
              pygame.display.update()
              pygame.time.wait(300)
              v.pex += 100
@@ -464,8 +463,6 @@ def day01():
     while v.jantar == True:
         reta_selecionar =pygame.image.load(r'imagens\botao_selecionar.png')
         SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
-        SCREEN.blit(grid_jogo, (0,0))
-        SCREEN.blit(char1, (x_char_sair,y_char))
         pygame.display.update()
         #primeiro botao
         botao01 = 510
@@ -512,19 +509,19 @@ def day01():
                 #mover para escolher botao:
                 if event.key == pygame.K_DOWN and y_selecionar < 585:
                     y_selecionar += 25
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 elif event.key == pygame.K_DOWN and y_selecionar >= 585:
                     y_selecionar = 510
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 if event.key == pygame.K_UP and y_selecionar > 510:
                     y_selecionar -= 25
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 elif event.key == pygame.K_UP and y_selecionar <= 510:
                     y_selecionar = 585
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 #identificar qual botao esta sendo apertado:
                 if event.key == pygame.K_RETURN:
@@ -533,7 +530,7 @@ def day01():
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char1, (x_char_cozinha,y_char))
                         pygame.display.update()
-                        pygame.time.wait(240)
+                        pygame.time.wait(600)
                         SCREEN.blit(grid_jogo,(0,0))
                         SCREEN.blit(char1, (x_char_sala,y_char))
                         v.jantar = False
@@ -542,7 +539,7 @@ def day01():
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char1, (x_char_cozinha,y_char))
                         pygame.display.update()
-                        pygame.time.wait(240)
+                        pygame.time.wait(600)
                         SCREEN.blit(grid_jogo,(0,0))
                         SCREEN.blit(char1, (x_char_sala,y_char))
                         v.jantar = False
@@ -551,7 +548,7 @@ def day01():
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char1, (x_char_cozinha,y_char))
                         pygame.display.update()
-                        pygame.time.wait(240)
+                        pygame.time.wait(600)
                         SCREEN.blit(grid_jogo,(0,0))
                         SCREEN.blit(char1, (x_char_sala,y_char))
                         v.jantar = False
@@ -560,7 +557,7 @@ def day01():
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char1, (x_char_cozinha,y_char))
                         pygame.display.update()
-                        pygame.time.wait(240)
+                        pygame.time.wait(600)
                         SCREEN.blit(grid_jogo,(0,0))
                         SCREEN.blit(char1, (x_char_sala,y_char))
                         v.jantar = False
@@ -613,19 +610,19 @@ def day01():
                 #mover para escolher botao:
                 if event.key == pygame.K_DOWN and y_selecionar < 585:
                     y_selecionar += 25
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 elif event.key == pygame.K_DOWN and y_selecionar >= 585:
                     y_selecionar = 510
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 if event.key == pygame.K_UP and y_selecionar > 510:
                     y_selecionar -= 25
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 elif event.key == pygame.K_UP and y_selecionar <= 510:
                     y_selecionar = 585
-                    pygame.draw.rect(SCREEN,WHITE, local_opcoes)
+                    pygame.draw.rect(SCREEN,BLACK, local_opcoes)
                     pygame.display.update()
                 #identificar qual botao esta sendo apertado:
                 if event.key == pygame.K_RETURN:

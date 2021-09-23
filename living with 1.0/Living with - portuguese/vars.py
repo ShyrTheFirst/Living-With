@@ -1,4 +1,4 @@
-start = False
+start = True
 roupa = False
 cafe_da_manha = False
 sair_trabalhar = False
@@ -13,6 +13,8 @@ pe = False
 carro = False
 onibus = False
 uber = False
-
+aviso = True
 pex = 100
 peloop = True
+depre = 0
+weekloop = False
