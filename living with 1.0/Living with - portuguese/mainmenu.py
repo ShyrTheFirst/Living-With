@@ -11,6 +11,10 @@ WINDOW_HEIGHT = 720
 def menu():
 
     pygame.init()
+    pygame.mixer.init()
+    menu_music = pygame.mixer.Sound('audio\musica menu.mp3')
+    pygame.mixer.Sound.play(menu_music)
+    pygame.mixer.Sound.set_volume(menu_music,2)
     SCREEN = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
     CLOCK = pygame.time.Clock()
     SCREEN.fill(BLACK)
@@ -40,7 +44,9 @@ def menu():
              if retStart.collidepoint(mouseposition):
                  v.weekloop = True
                  v.start = False
+                 pygame.mixer.Sound.stop(menu_music)
              if retExit.collidepoint(mouseposition):
+              pygame.mixer.Sound.stop(menu_music)
               pygame.quit()
               pygame.display.quit()
               sys.exit()

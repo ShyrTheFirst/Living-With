@@ -34,6 +34,10 @@ def day07():
     grito02 = pygame.mixer.Sound('audio\grito 02.mp3')
     som_carro = pygame.mixer.Sound(r'audio\som carro.mp3')
     som_cidade = pygame.mixer.Sound(r'audio\som cidade.mp3')
+    vestindo = pygame.mixer.Sound(r'audio\vestindo.mp3')
+    saindo = pygame.mixer.Sound(r'audio\saindo.mp3')
+    tv = pygame.mixer.Sound(r'audio\tv.mp3')
+    comendo = pygame.mixer.Sound(r'audio\comendo.mp3')
     #sons definidos
     pygame.mixer.Sound.play(background_music)
     pygame.mixer.Sound.set_volume(background_music,2)
@@ -157,6 +161,8 @@ def day07():
                     localdoy = y_selecionar
                     if localdoy == botao01:
                         #verde
+                        pygame.mixer.Sound.play(vestindo)
+                        pygame.mixer.Sound.set_volume(vestindo,4)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char_verde, (x_char_banheiro,y_char))
                         pygame.display.update()
@@ -167,9 +173,12 @@ def day07():
                         char1 = char_verde
                         v.cafe_da_manha = True
                         v.roupa = False
+                        pygame.mixer.Sound.stop(vestindo)
                         
                     elif localdoy == botao03:
                         #amarela
+                        pygame.mixer.Sound.play(vestindo)
+                        pygame.mixer.Sound.set_volume(vestindo,4)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char_amarela, (x_char_banheiro,y_char))
                         pygame.display.update()
@@ -180,8 +189,12 @@ def day07():
                         char1 = char_amarela
                         v.cafe_da_manha = True
                         v.roupa = False
+                        pygame.mixer.Sound.stop(vestindo)
+                        
                     elif localdoy == botao04:
                         #vermelha
+                        pygame.mixer.Sound.play(vestindo)
+                        pygame.mixer.Sound.set_volume(vestindo,4)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char_vermelha, (x_char_banheiro,y_char))
                         pygame.display.update()
@@ -192,8 +205,12 @@ def day07():
                         char1 = char_vermelha
                         v.cafe_da_manha = True
                         v.roupa = False
+                        pygame.mixer.Sound.stop(vestindo)
+                        
                     elif localdoy == botao05:
                         #preta
+                        pygame.mixer.Sound.play(vestindo)
+                        pygame.mixer.Sound.set_volume(vestindo,4)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char_preta, (x_char_banheiro,y_char))
                         pygame.display.update()
@@ -204,6 +221,7 @@ def day07():
                         char1 = char_preta
                         v.cafe_da_manha = True
                         v.roupa = False
+                        pygame.mixer.Sound.stop(vestindo)
                     
 
     while v.cafe_da_manha == True:
@@ -274,32 +292,47 @@ def day07():
                     localdoy = y_selecionar
                     if localdoy == botao01:
                         #paoeleite
+                        pygame.mixer.Sound.play(comendo)
+                        pygame.mixer.Sound.set_volume(comendo,4)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char1, (x_char_sala,y_char))
                         pygame.display.update()
                         v.cafe_da_manha = False
                         v.jantar = True
+                        pygame.mixer.Sound.stop(comendo)
+                        
                     elif localdoy == botao03:
                         #boloeleite
+                        pygame.mixer.Sound.play(comendo)
+                        pygame.mixer.Sound.set_volume(comendo,4)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char1, (x_char_sala,y_char))
                         pygame.display.update()
                         v.cafe_da_manha = False
                         v.jantar = True
+                        pygame.mixer.Sound.stop(comendo)
+                        
                     elif localdoy == botao04:
                         #lancheesuco
+                        pygame.mixer.Sound.play(comendo)
+                        pygame.mixer.Sound.set_volume(comendo,4)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char1, (x_char_sala,y_char))
                         pygame.display.update()
                         v.cafe_da_manha = False
                         v.jantar = True
+                        pygame.mixer.Sound.stop(comendo)
+                        
                     elif localdoy == botao05:
                         #tortaesuco
+                        pygame.mixer.Sound.play(comendo)
+                        pygame.mixer.Sound.set_volume(comendo,4)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char1, (x_char_sala,y_char))
                         pygame.display.update()
                         v.cafe_da_manha = False
                         v.jantar = True
+                        pygame.mixer.Sound.stop(comendo)
         
     while v.jantar == True:
         pygame.time.wait(1000)
@@ -369,6 +402,8 @@ def day07():
                 if event.key == pygame.K_RETURN:
                     localdoy = y_selecionar
                     if localdoy == botao01:
+                        pygame.mixer.Sound.play(comendo)
+                        pygame.mixer.Sound.set_volume(comendo,4)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char1, (x_char_cozinha,y_char))
                         pygame.display.update()
@@ -377,7 +412,11 @@ def day07():
                         SCREEN.blit(char1, (x_char_sala,y_char))
                         v.jantar = False
                         v.distrair = True
+                        pygame.mixer.Sound.stop(comendo)
+                        
                     elif localdoy == botao03:
+                        pygame.mixer.Sound.play(comendo)
+                        pygame.mixer.Sound.set_volume(comendo,4)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char1, (x_char_cozinha,y_char))
                         pygame.display.update()
@@ -386,7 +425,11 @@ def day07():
                         SCREEN.blit(char1, (x_char_sala,y_char))
                         v.jantar = False
                         v.distrair = True
+                        pygame.mixer.Sound.stop(comendo)
+                        
                     elif localdoy == botao04:
+                        pygame.mixer.Sound.play(comendo)
+                        pygame.mixer.Sound.set_volume(comendo,4)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char1, (x_char_cozinha,y_char))
                         pygame.display.update()
@@ -395,7 +438,11 @@ def day07():
                         SCREEN.blit(char1, (x_char_sala,y_char))
                         v.jantar = False
                         v.distrair = True
+                        pygame.mixer.Sound.stop(comendo)
+                        
                     elif localdoy == botao05:
+                        pygame.mixer.Sound.play(comendo)
+                        pygame.mixer.Sound.set_volume(comendo,4)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char1, (x_char_cozinha,y_char))
                         pygame.display.update()
@@ -404,6 +451,7 @@ def day07():
                         SCREEN.blit(char1, (x_char_sala,y_char))
                         v.jantar = False
                         v.distrair = True
+                        pygame.mixer.Sound.stop(comendo)
                         
     while v.distrair == True:
         reta_selecionar =pygame.image.load(r'imagens\botao_selecionar.png')
@@ -470,29 +518,44 @@ def day07():
                 if event.key == pygame.K_RETURN:
                     localdoy = y_selecionar
                     if localdoy == botao01:
+                        pygame.mixer.Sound.play(tv)
+                        pygame.mixer.Sound.set_volume(tv,4)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char_sentado, (x_char_sentado,y_char))
                         pygame.display.update()
                         v.distrair = False
                         v.depressao_ataca = True
+                        pygame.mixer.Sound.stop(tv)
+                        
                     elif localdoy == botao03:
+                        pygame.mixer.Sound.play(tv)
+                        pygame.mixer.Sound.set_volume(tv,4)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char_sentado, (x_char_sentado,y_char))
                         pygame.display.update()
                         v.distrair = False
                         v.depressao_ataca = True
+                        pygame.mixer.Sound.stop(tv)
+                        
                     elif localdoy == botao04:
+                        pygame.mixer.Sound.play(tv)
+                        pygame.mixer.Sound.set_volume(tv,4)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char_sentado, (x_char_sentado,y_char))
                         pygame.display.update()
                         v.distrair = False
                         v.depressao_ataca = True
+                        pygame.mixer.Sound.stop(tv)
+                        
                     elif localdoy == botao05:
+                        pygame.mixer.Sound.play(tv)
+                        pygame.mixer.Sound.set_volume(tv,4)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char_sentado, (x_char_sentado,y_char))
                         pygame.display.update()
                         v.distrair = False
                         v.depressao_ataca = True
+                        pygame.mixer.Sound.stop(tv)
 
     while v.depressao_ataca == True:
         SCREEN.fill((0,0,0))

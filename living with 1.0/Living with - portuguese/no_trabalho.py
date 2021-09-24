@@ -14,6 +14,10 @@ WINDOW_HEIGHT = 720
 def trabalho():
     pygame.init()
     pygame.font.init()
+    pygame.mixer.init()
+    trabalho_music = pygame.mixer.Sound('audio\trabalho.mp3')
+    pygame.mixer.Sound.play(trabalho_music)
+    pygame.mixer.Sound.set_volume(trabalho_music,2)
     font_default = pygame.font.get_default_font()
     fonte = pygame.font.SysFont(font_default, 50)
     SCREEN = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
@@ -55,6 +59,7 @@ def trabalho():
              pygame.time.wait(3000)
              SCREEN.fill(BLACK)
              pygame.display.update()
+             pygame.mixer.Sound.stop(trabalho_music)
              v.uber = False
              v.onibus = False
              v.carro = False
@@ -70,6 +75,7 @@ def trabalho():
              pygame.time.wait(3000)
              SCREEN.fill(BLACK)
              pygame.display.update()
+             pygame.mixer.Sound.stop(trabalho_music)
              v.uber = False
              v.onibus = False
              v.carro = False

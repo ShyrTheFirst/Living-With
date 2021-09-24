@@ -12,6 +12,10 @@ WINDOW_HEIGHT = 720
 def passeio():
     pygame.init()
     pygame.font.init()
+    pygame.mixer.init()
+    passeio_music = pygame.mixer.Sound('audio\passeio.mp3')
+    pygame.mixer.Sound.play(passeio_music)
+    pygame.mixer.Sound.set_volume(passeio_music,2)
     font_default = pygame.font.get_default_font()
     fonte = pygame.font.SysFont(font_default, 50)
     SCREEN = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
@@ -31,6 +35,7 @@ def passeio():
      SCREEN.blit(frase03, (100,300))
      pygame.display.update()
      pygame.time.wait(3000)
+     pygame.mixer.Sound.stop(passeio_music)
      v.no_trabalho = False
      v.jantar = True
      
