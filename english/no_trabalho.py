@@ -48,40 +48,12 @@ def trabalho():
      pygame.draw.rect(SCREEN,WHITE, reclamar_rect)
      SCREEN.blit(aguentar, (100,350))
      SCREEN.blit(reclamar, (100,400))
-     x_selecionar = 90
-     y_selecionar = 350
-     reta_selecionar = pygame.image.load(r'imagens\botao_selecionar.png')
-     SCREEN.blit(reta_selecionar, (x_selecionar,y_selecionar))
-     pygame.display.update()
-while v.no_trabalho == True:
-     for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-
-     frase01 = fonte.render("Tudo corria normal... até que", 1, WHITE)
-     SCREEN.blit(frase01, (100,100))
-     pygame.display.update()
-     evento1 = "{}".format(ev.evento)
-     frase02 = fonte.render(evento1, 1, WHITE)
-     SCREEN.blit(frase02, (100,200))
-     pygame.display.update()
-     frase03 = fonte.render("O que você deve fazer?", 1, WHITE)
-     SCREEN.blit(frase03, (100,300))
-     aguentar = pygame.image.load(r'imagens\aguentar.jpg')
-     reclamar = pygame.image.load(r'imagens\reclamar.jpg')
-     aguentar_rect = pygame.Rect(100,350,100,30)
-     reclamar_rect = pygame.Rect(100,400,100,30)
-     
-     pygame.draw.rect(SCREEN,WHITE, aguentar_rect)
-     pygame.draw.rect(SCREEN,WHITE, reclamar_rect)
-     SCREEN.blit(aguentar, (100,350))
-     SCREEN.blit(reclamar, (100,400))
      x_selecionar = 80
      y_selecionar = 350
      reta_selecionar = pygame.image.load(r'imagens\botao_selecionar.png')
      SCREEN.blit(reta_selecionar, (x_selecionar,y_selecionar))
      pygame.display.update()
+
      while v.looptrabalho == True:
       for event in pygame.event.get():
        if event.type == pygame.KEYDOWN:
