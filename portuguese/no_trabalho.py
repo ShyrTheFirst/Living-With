@@ -48,6 +48,10 @@ def trabalho():
      pygame.draw.rect(SCREEN,WHITE, reclamar_rect)
      SCREEN.blit(aguentar, (100,350))
      SCREEN.blit(reclamar, (100,400))
+     x_selecionar = 90
+     y_selecionar = 350
+     reta_selecionar = pygame.image.load(r'imagens\reta_selecionar.png')
+     SCREEN.blit(reta_selecionar, (x_selecionar,y_selecionar))
      pygame.display.update()
      if pygame.mouse.get_pressed() == (1,0,0):
          mouseposition = pygame.mouse.get_pos()
