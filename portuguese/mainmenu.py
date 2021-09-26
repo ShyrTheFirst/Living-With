@@ -41,7 +41,7 @@ def menu():
     SCREEN.blit(botao_iniciar, (50,270))
     pygame.draw.rect(SCREEN,GRAY, retExit)
     SCREEN.blit(botao_sair, (50,390))
-    reta_selecionar = pygame.image.load(r'
+    reta_selecionar = pygame.image.load(r'imagens\botao_selecionar.png')
     SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
      
 
@@ -84,5 +84,12 @@ def menu():
       SCREEN.blit(fundo_menu,(0,0))
       SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
       pygame.display.update()
+      #identificar qual botao esta sendo apertado:
+    if event.key == pygame.K_RETURN:
+      localdoy = y_selecionar
+      if localdoy == 270:
+         #start game
+      If localdoy == 390:
+         #exit game
 
 
