@@ -34,6 +34,8 @@ def menu():
     botao_sair = pygame.image.load(r'imagens\botao_sair.jpg')
 
     SCREEN.blit(fundo_menu,(0,0))
+    x_selecionar = 25
+    y_selecionar = 270
     
     pygame.draw.rect(SCREEN,WHITE, retStart)
     SCREEN.blit(botao_iniciar, (50,270))
@@ -44,51 +46,54 @@ def menu():
      
 
     pygame.display.update()
-    if event.type == pygame.KEYDOWN:
+    while v.menu == True:
+     for event in pygame.event.get():
+      if event.type == pygame.KEYDOWN:
                 #mover para escolher botao:
-    if event.key == pygame.K_DOWN and y_selecionar ==  270:
-      y_selecionar = 390
-      pygame.draw.rect(SCREEN,WHITE, retStart)
-      SCREEN.blit(botao_iniciar, (50,270))
-      pygame.draw.rect(SCREEN,GRAY, retExit)
-      SCREEN.blit(botao_sair, (50,390))
-      SCREEN.blit(fundo_menu,(0,0))
-      SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
-      pygame.display.update()
-    elif event.key == pygame.K_DOWN and y_selecionar == 390:
-      y_selecionar = 270
-      pygame.draw.rect(SCREEN,WHITE, retStart)
-      SCREEN.blit(botao_iniciar, (50,270))
-      pygame.draw.rect(SCREEN,GRAY, retExit)
-      SCREEN.blit(botao_sair, (50,390))
-      SCREEN.blit(fundo_menu,(0,0))
-      SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
-      pygame.display.update()
-    if event.key == pygame.K_UP and y_selecionar = 270:
-      y_selecionar = 390
-      pygame.draw.rect(SCREEN,WHITE, retStart)
-      SCREEN.blit(botao_iniciar, (50,270))
-      pygame.draw.rect(SCREEN,GRAY, retExit)
-      SCREEN.blit(botao_sair, (50,390))
-      SCREEN.blit(fundo_menu,(0,0))
-      SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
-      pygame.display.update()
-    elif event.key == pygame.K_UP and y_selecionar == 390:
-      y_selecionar = 270
-      pygame.draw.rect(SCREEN,WHITE, retStart)
-      SCREEN.blit(botao_iniciar, (50,270))
-      pygame.draw.rect(SCREEN,GRAY, retExit)
-      SCREEN.blit(botao_sair, (50,390))
-      SCREEN.blit(fundo_menu,(0,0))
-      SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
-      pygame.display.update()
+       if event.key == pygame.K_DOWN and y_selecionar ==  270:
+        y_selecionar = 390
+        SCREEN.blit(fundo_menu,(0,0))
+        pygame.draw.rect(SCREEN,WHITE, retStart)
+        SCREEN.blit(botao_iniciar, (50,270))
+        pygame.draw.rect(SCREEN,GRAY, retExit)
+        SCREEN.blit(botao_sair, (50,390))
+        SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
+        pygame.display.update()
+       elif event.key == pygame.K_DOWN and y_selecionar == 390:
+        y_selecionar = 270
+        SCREEN.blit(fundo_menu,(0,0))
+        pygame.draw.rect(SCREEN,WHITE, retStart)
+        SCREEN.blit(botao_iniciar, (50,270))
+        pygame.draw.rect(SCREEN,GRAY, retExit)
+        SCREEN.blit(botao_sair, (50,390))
+        SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
+        pygame.display.update()
+       if event.key == pygame.K_UP and y_selecionar == 270:
+        y_selecionar = 390
+        SCREEN.blit(fundo_menu,(0,0))
+        pygame.draw.rect(SCREEN,WHITE, retStart)
+        SCREEN.blit(botao_iniciar, (50,270))
+        pygame.draw.rect(SCREEN,GRAY, retExit)
+        SCREEN.blit(botao_sair, (50,390))
+        SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
+        pygame.display.update()
+       elif event.key == pygame.K_UP and y_selecionar == 390:
+        y_selecionar = 270
+        SCREEN.blit(fundo_menu,(0,0))
+        pygame.draw.rect(SCREEN,WHITE, retStart)
+        SCREEN.blit(botao_iniciar, (50,270))
+        pygame.draw.rect(SCREEN,GRAY, retExit)
+        SCREEN.blit(botao_sair, (50,390))
+        SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
+        pygame.display.update()
       #identificar qual botao esta sendo apertado:
-    if event.key == pygame.K_RETURN:
-      localdoy = y_selecionar
-      if localdoy == 270:
+       if event.key == pygame.K_RETURN:
+        localdoy = y_selecionar
+        if localdoy == 270:
+                 v.menu = False
                  v.weekloop = True
                  v.start = False
-      If localdoy == 390:
+        if localdoy == 390:
                  pygame.quit()
                  pygame.display.quit()
                  sys.exit()
