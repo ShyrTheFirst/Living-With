@@ -13,6 +13,10 @@ WINDOW_HEIGHT = 720
 def menu():
 
     pygame.init()
+    pygame.mixer.init()
+    menumusic = pygame.mixer.Sound(r'audio\musica menu.mp3')
+    pygame.mixer.Sound.play(menumusic)
+    pygame.mixer.Sound.set_volume(menumusic,1)
     SCREEN = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
     CLOCK = pygame.time.Clock()
     SCREEN.fill(BLACK)
@@ -90,6 +94,7 @@ def menu():
        if event.key == pygame.K_RETURN:
         localdoy = y_selecionar
         if localdoy == 270:
+                 pygame.mixer.Sound.stop(menumusic)
                  v.menu = False
                  v.weekloop = True
                  v.start = False
