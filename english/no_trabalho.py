@@ -50,7 +50,7 @@ def trabalho():
      SCREEN.blit(reclamar, (100,400))
      x_selecionar = 90
      y_selecionar = 350
-     reta_selecionar = pygame.image.load(r'imagens\reta_selecionar.png')
+     reta_selecionar = pygame.image.load(r'imagens\botao_selecionar.png')
      SCREEN.blit(reta_selecionar, (x_selecionar,y_selecionar))
      pygame.display.update()
 while v.no_trabalho == True:
