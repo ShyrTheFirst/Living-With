@@ -14,7 +14,7 @@ You can see that there are 2 languages for this game. English and Portuguese. Ea
 
 How-to-play
 -----------------------------------------------------------------------------------------------------------------
-This game is simple: use the arrow keys to select your option and the return to confirm... The menu and "work" area you need to use the mouse to click your option!
+This game is simple: use the arrow keys to select your option and the return to confirm.
 There are no right or wrong choices, it's just what you want or don't want to do!
 -----------------------------------------------------------------------------------------------------------------
 
