@@ -88,8 +88,11 @@ def menu():
     if event.key == pygame.K_RETURN:
       localdoy = y_selecionar
       if localdoy == 270:
-         #start game
+                 v.weekloop = True
+                 v.start = False
       If localdoy == 390:
-         #exit game
+                 pygame.quit()
+                 pygame.display.quit()
+                 sys.exit()
 
 
