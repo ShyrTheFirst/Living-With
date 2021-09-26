@@ -56,22 +56,42 @@ def trabalho():
 
      if event.key == pygame.K_DOWN and y_selecionar ==  350:
       y_selecionar = 400
-      
+      SCREEN.fill(BLACK)
+      SCREEN.blit(frase01, (100,100))
+      SCREEN.blit(frase02, (100,200))
+      SCREEN.blit(frase03, (100,300))
+      SCREEN.blit(aguentar, (100,350))
+      SCREEN.blit(reclamar, (100,400))
       SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
       pygame.display.update()
      elif event.key == pygame.K_DOWN and y_selecionar == 400:
       y_selecionar = 350
-      
+      SCREEN.fill(BLACK)
+      SCREEN.blit(frase01, (100,100))
+      SCREEN.blit(frase02, (100,200))
+      SCREEN.blit(frase03, (100,300))
+      SCREEN.blit(aguentar, (100,350))
+      SCREEN.blit(reclamar, (100,400))
       SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
       pygame.display.update()
      if event.key == pygame.K_UP and y_selecionar =350:
       y_selecionar = 400
-      
+      SCREEN.fill(BLACK)
+      SCREEN.blit(frase01, (100,100))
+      SCREEN.blit(frase02, (100,200))
+      SCREEN.blit(frase03, (100,300))
+      SCREEN.blit(aguentar, (100,350))
+      SCREEN.blit(reclamar, (100,400))
       SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
       pygame.display.update()
      elif event.key == pygame.K_UP and y_selecionar == 400:
       y_selecionar = 350
-      
+      SCREEN.fill(BLACK)
+      SCREEN.blit(frase01, (100,100))
+      SCREEN.blit(frase02, (100,200))
+      SCREEN.blit(frase03, (100,300))
+      SCREEN.blit(aguentar, (100,350))
+      SCREEN.blit(reclamar, (100,400))
       SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
       pygame.display.update()
       #identificar qual botao esta sendo apertado:
