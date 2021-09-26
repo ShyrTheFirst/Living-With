@@ -37,6 +37,9 @@ def day05():
     saindo = pygame.mixer.Sound(r'audio\saindo.mp3')
     tv = pygame.mixer.Sound(r'audio\tv.mp3')
     comendo = pygame.mixer.Sound(r'audio\comendo.mp3')
+    jogando = pygame.mixer.Sound(r'audio\jogando.mp3')
+    lendo = pygame.mixer.Sound(r'audio\lendo.mp3')
+    navegando = pygame.mixer.Sound(r'audio\navegando.mp3')
     #sons definidos
     pygame.mixer.Sound.play(background_music)
     pygame.mixer.Sound.set_volume(background_music,0.5)
@@ -710,9 +713,10 @@ def day05():
                 if event.key == pygame.K_RETURN:
                     localdoy = y_selecionar
                     if localdoy == botao01:
+                        #tv
                         pygame.mixer.Sound.play(tv)
                         pygame.mixer.Sound.set_volume(tv,1)
-                        pygame.time.delay(1000)
+                        pygame.time.wait(240)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char_sentado, (x_char_sentado,y_char))
                         pygame.display.update()
@@ -721,37 +725,40 @@ def day05():
                         pygame.mixer.Sound.stop(tv)
                         
                     elif localdoy == botao03:
-                        pygame.mixer.Sound.play(tv)
-                        pygame.mixer.Sound.set_volume(tv,1)
-                        pygame.time.delay(1000)
+                        #ler
+                        pygame.mixer.Sound.play(lendo)
+                        pygame.mixer.Sound.set_volume(lendo,1)
+                        pygame.time.wait(300)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char_sentado, (x_char_sentado,y_char))
                         pygame.display.update()
                         v.distrair = False
                         v.depressao_ataca = True
-                        pygame.mixer.Sound.stop(tv)
+                        pygame.mixer.Sound.stop(lendo)
                         
                     elif localdoy == botao04:
-                        pygame.mixer.Sound.play(tv)
-                        pygame.mixer.Sound.set_volume(tv,1)
-                        pygame.time.delay(1000)
+                        #navegar
+                        pygame.mixer.Sound.play(navegando)
+                        pygame.mixer.Sound.set_volume(navegando,1)
+                        pygame.time.wait(320)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char_sentado, (x_char_sentado,y_char))
                         pygame.display.update()
                         v.distrair = False
                         v.depressao_ataca = True
-                        pygame.mixer.Sound.stop(tv)
+                        pygame.mixer.Sound.stop(navegando)
                         
                     elif localdoy == botao05:
-                        pygame.mixer.Sound.play(tv)
-                        pygame.mixer.Sound.set_volume(tv,1)
-                        pygame.time.delay(1000)
+                        #jogar
+                        pygame.mixer.Sound.play(jogando)
+                        pygame.mixer.Sound.set_volume(jogando,1)
+                        pygame.time.wait(400)
                         SCREEN.blit(grid_jogo, (0,0))
                         SCREEN.blit(char_sentado, (x_char_sentado,y_char))
                         pygame.display.update()
                         v.distrair = False
                         v.depressao_ataca = True
-                        pygame.mixer.Sound.stop(tv)
+                        pygame.mixer.Sound.stop(jogando)
 
     while v.depressao_ataca == True:
         pygame.mixer.Sound.play(reclamacao)
