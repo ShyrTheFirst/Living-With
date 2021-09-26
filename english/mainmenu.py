@@ -39,18 +39,56 @@ def menu():
     SCREEN.blit(botao_iniciar, (50,270))
     pygame.draw.rect(SCREEN,GRAY, retExit)
     SCREEN.blit(botao_sair, (50,390))
+    reta_selecionar = pygame.image.load(r'imagens\botao_selecionar.png')
+    SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
+     
 
     pygame.display.update()
-    if pygame.mouse.get_pressed() == (1,0,0):
-             mouseposition = pygame.mouse.get_pos()
-             if retStart.collidepoint(mouseposition):
+    if event.type == pygame.KEYDOWN:
+                #mover para escolher botao:
+    if event.key == pygame.K_DOWN and y_selecionar ==  270:
+      y_selecionar = 390
+      pygame.draw.rect(SCREEN,WHITE, retStart)
+      SCREEN.blit(botao_iniciar, (50,270))
+      pygame.draw.rect(SCREEN,GRAY, retExit)
+      SCREEN.blit(botao_sair, (50,390))
+      SCREEN.blit(fundo_menu,(0,0))
+      SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
+      pygame.display.update()
+    elif event.key == pygame.K_DOWN and y_selecionar == 390:
+      y_selecionar = 270
+      pygame.draw.rect(SCREEN,WHITE, retStart)
+      SCREEN.blit(botao_iniciar, (50,270))
+      pygame.draw.rect(SCREEN,GRAY, retExit)
+      SCREEN.blit(botao_sair, (50,390))
+      SCREEN.blit(fundo_menu,(0,0))
+      SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
+      pygame.display.update()
+    if event.key == pygame.K_UP and y_selecionar = 270:
+      y_selecionar = 390
+      pygame.draw.rect(SCREEN,WHITE, retStart)
+      SCREEN.blit(botao_iniciar, (50,270))
+      pygame.draw.rect(SCREEN,GRAY, retExit)
+      SCREEN.blit(botao_sair, (50,390))
+      SCREEN.blit(fundo_menu,(0,0))
+      SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
+      pygame.display.update()
+    elif event.key == pygame.K_UP and y_selecionar == 390:
+      y_selecionar = 270
+      pygame.draw.rect(SCREEN,WHITE, retStart)
+      SCREEN.blit(botao_iniciar, (50,270))
+      pygame.draw.rect(SCREEN,GRAY, retExit)
+      SCREEN.blit(botao_sair, (50,390))
+      SCREEN.blit(fundo_menu,(0,0))
+      SCREEN.blit(reta_selecionar, (x_selecionar, y_selecionar))
+      pygame.display.update()
+      #identificar qual botao esta sendo apertado:
+    if event.key == pygame.K_RETURN:
+      localdoy = y_selecionar
+      if localdoy == 270:
                  v.weekloop = True
                  v.start = False
-                 
-             if retExit.collidepoint(mouseposition):
+      If localdoy == 390:
                  pygame.quit()
                  pygame.display.quit()
                  sys.exit()
-
-
-
