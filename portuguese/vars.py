@@ -17,3 +17,5 @@ pex = 100
 peloop = True
 depre = 0
 weekloop = False
+menu = True
+looptrabalho = True
