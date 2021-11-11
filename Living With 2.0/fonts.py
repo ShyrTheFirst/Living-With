@@ -1,12 +1,13 @@
-import pygame
+import pygame, pygame.freetype
+
 
 pygame.init()
-pygame.font.init()
+pygame.freetype.init()
 
 #fontes#
-fonte_principal = pygame.font.Font(r'fontes\sketch_DeutscheZierschrift.ttf',80)
-fonte_principal_pequena = pygame.font.Font(r'fontes\sketch_DeutscheZierschrift.ttf',30)
-fonte_secundaria = pygame.font.Font(r'fontes\rand2GothicSpell.ttf',60)
+fonte_principal = pygame.freetype.Font(r'fontes\sketch_DeutscheZierschrift.ttf',80)
+fonte_principal_pequena = pygame.freetype.Font(r'fontes\sketch_DeutscheZierschrift.ttf',30)
+fonte_secundaria = pygame.freetype.Font(r'fontes\rand2GothicSpell.ttf',60)
 
 
 def quitgame():
