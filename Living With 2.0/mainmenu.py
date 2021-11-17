@@ -1,6 +1,9 @@
 import pygame, pygame.freetype, sys
+import vars as v
+from vars import quitgame
 
 pygame.init()
+pygame.display.set_caption("Living With")
 pygame.freetype.init()
 
 #fontes#
@@ -24,45 +27,37 @@ def titulo_movendo(tela,cor_fundo,cor_letra):
     waiting_time2 = time+5
     waiting_time3 = time+5
     while mover == True:
-        living_with = fonte_principal.render_to(tela,(300,30),"Living With",fgcolor=cor_letra, bgcolor=None,style=padrao,size=80)
+        living_with = fonte_principal.render_to(v.tela,(300,30),"Living With",fgcolor=cor_letra, bgcolor=None,style=padrao,size=80)
         pygame.display.flip()
         time = pygame.time.get_ticks()
         waiting_time1 = time+500
         while pygame.time.get_ticks() <= waiting_time1:
             quitgame()
-        tela.fill(cor_fundo)
-        fonte_principal.render_to(tela,(320,40),"Living With",fgcolor=cor_letra, bgcolor=None,style=padrao,size=80)
+        v.tela.fill(cor_fundo)
+        fonte_principal.render_to(v.tela,(320,40),"Living With",fgcolor=cor_letra, bgcolor=None,style=padrao,size=80)
         pygame.display.flip()
         time = pygame.time.get_ticks()
         waiting_time2 = time+500
         while pygame.time.get_ticks() <= waiting_time2:
             quitgame()
-        tela.fill(cor_fundo)
-        fonte_principal.render_to(tela,(300,30),"Living With",fgcolor=cor_letra, bgcolor=None,style=padrao,size=80)
+        v.tela.fill(cor_fundo)
+        fonte_principal.render_to(v.tela,(300,30),"Living With",fgcolor=cor_letra, bgcolor=None,style=padrao,size=80)
         pygame.display.flip()
         time = pygame.time.get_ticks()
         waiting_time3 = time+500
         while pygame.time.get_ticks() <= waiting_time3:
             quitgame()
-        tela.fill(cor_fundo)
-        fonte_principal.render_to(tela,(320,40),"Living With",fgcolor=cor_letra, bgcolor=None,style=padrao,size=80)
+        v.tela.fill(cor_fundo)
+        fonte_principal.render_to(v.tela,(320,40),"Living With",fgcolor=cor_letra, bgcolor=None,style=padrao,size=80)
         pygame.display.flip()
-        tela.fill(cor_fundo)
+        v.tela.fill(cor_fundo)
         pygame.display.flip()
         mover = False
 
-def quitgame():
-    for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                pygame.display.quit()
-                sys.exit()
+
 
 def menu():
     relogio = pygame.time.Clock()
-    largura = 800
-    altura = 600
-    tela = pygame.display.set_mode((largura,altura))
     branco = (255,255,255)
     preto = (0,0,0)
     vermelho = (255,0,0)
@@ -85,23 +80,23 @@ def menu():
     cor_ativa_r1024_768 = branco
     estilo_ativo_r1024_768 = padrao
     
-    tela.fill(preto)
+    v.tela.fill(preto)
     pygame.display.update()
     relogio.tick(60)
-    game_runing = True
+    menu_runing = True
     saindo = False
     config = False
-    titulo1 = titulo_movendo(tela,preto,branco)
+    titulo1 = titulo_movendo(v.tela,preto,branco)
     pygame.display.flip()
     
     
     
-    while game_runing:
-        tela.fill(preto)
-        titulo = fonte_principal.render_to(tela,(300,30),"Living With", fgcolor=branco, bgcolor=None,style=padrao,size=80)
-        sair = fonte_principal_pequena.render_to(tela,(70,390),"Sair",fgcolor=cor_ativa_sair, bgcolor=None,style=estilo_ativo_sair,size=30)
-        iniciar = fonte_principal_pequena.render_to(tela,(70,270),"Iniciar",fgcolor=cor_ativa_iniciar, bgcolor=None,style=estilo_ativo_iniciar,size=30)
-        opcoes = fonte_principal_pequena.render_to(tela,(70,330),"Opcoes",fgcolor=cor_ativa_opcoes, bgcolor=None,style=estilo_ativo_opcoes,size=30)
+    while menu_runing:
+        v.tela.fill(preto)
+        titulo = fonte_principal.render_to(v.tela,(300,30),"Living With", fgcolor=branco, bgcolor=None,style=padrao,size=80)
+        sair = fonte_principal_pequena.render_to(v.tela,(70,390),"Sair",fgcolor=cor_ativa_sair, bgcolor=None,style=estilo_ativo_sair,size=30)
+        iniciar = fonte_principal_pequena.render_to(v.tela,(70,270),"Iniciar",fgcolor=cor_ativa_iniciar, bgcolor=None,style=estilo_ativo_iniciar,size=30)
+        opcoes = fonte_principal_pequena.render_to(v.tela,(70,330),"Opcoes",fgcolor=cor_ativa_opcoes, bgcolor=None,style=estilo_ativo_opcoes,size=30)
         
             
         pygame.display.flip()
@@ -137,10 +132,10 @@ def menu():
                 saindo = True
                 while saindo:
                     quitgame()
-                    tela.fill(preto)
-                    tem_certeza = fonte_principal_pequena.render_to(tela,(250,250),"Tem certeza?",fgcolor=branco, bgcolor=None,style=padrao,size=50)
-                    sim_certeza = fonte_principal_pequena.render_to(tela,(270,350),"Sim",fgcolor=cor_ativa_sim, bgcolor=None,style=estilo_ativo_sim,size=30)
-                    nao_certeza = fonte_principal_pequena.render_to(tela,(450,350),"Nao",fgcolor=cor_ativa_nao, bgcolor=None,style=estilo_ativo_nao,size=30)
+                    v.tela.fill(preto)
+                    tem_certeza = fonte_principal_pequena.render_to(v.tela,(250,250),"Tem certeza?",fgcolor=branco, bgcolor=None,style=padrao,size=50)
+                    sim_certeza = fonte_principal_pequena.render_to(v.tela,(270,350),"Sim",fgcolor=cor_ativa_sim, bgcolor=None,style=estilo_ativo_sim,size=30)
+                    nao_certeza = fonte_principal_pequena.render_to(v.tela,(450,350),"Nao",fgcolor=cor_ativa_nao, bgcolor=None,style=estilo_ativo_nao,size=30)
                     pygame.display.flip()
                     posicao_mouse = pygame.mouse.get_pos()
                     if sim_certeza.collidepoint(posicao_mouse):
@@ -166,16 +161,18 @@ def menu():
                         if nao_certeza.collidepoint(posicao_mouse):
                             saindo = False
             if iniciar.collidepoint(posicao_mouse):
-                print("start")
+                menu_runing = False
+                v.menu = False
+                v.start_game = True
 
             if opcoes.collidepoint(posicao_mouse):
                 config = True
                 while config:
                     quitgame()
-                    tela.fill(preto)
-                    resolucao = fonte_principal_pequena.render_to(tela,(180,130),"Escolha a resolucao:",fgcolor=branco, bgcolor=None,style=padrao,size=50)
-                    r800_600 = fonte_principal_pequena.render_to(tela,(330,220),"800x600",fgcolor=cor_ativa_r800_600, bgcolor=None,style=estilo_ativo_r800_600,size=30)
-                    r1024_768 = fonte_principal_pequena.render_to(tela,(330,280),"1024x768",fgcolor=cor_ativa_r1024_768, bgcolor=None,style=estilo_ativo_r1024_768,size=30)
+                    v.tela.fill(preto)
+                    resolucao = fonte_principal_pequena.render_to(v.tela,(180,130),"Escolha a resolucao:",fgcolor=branco, bgcolor=None,style=padrao,size=50)
+                    r800_600 = fonte_principal_pequena.render_to(v.tela,(330,220),"800x600",fgcolor=cor_ativa_r800_600, bgcolor=None,style=estilo_ativo_r800_600,size=30)
+                    r1024_768 = fonte_principal_pequena.render_to(v.tela,(330,280),"1024x768",fgcolor=cor_ativa_r1024_768, bgcolor=None,style=estilo_ativo_r1024_768,size=30)
                     pygame.display.flip()
                     posicao_mouse = pygame.mouse.get_pos()
                     if r800_600.collidepoint(posicao_mouse):
@@ -195,16 +192,14 @@ def menu():
                     if pygame.mouse.get_pressed() == (1,0,0):
                         posicao_mouse = pygame.mouse.get_pos()
                         if r800_600.collidepoint(posicao_mouse):
-                            largura = 800
-                            altura = 600
-                            tela = pygame.display.set_mode((largura,altura))
+                            v.largura = 800
+                            v.altura = 600
+                            v.tela = pygame.display.set_mode((v.largura,v.altura))
                             config = False
                         if r1024_768.collidepoint(posicao_mouse):
-                            largura = 1024
-                            altura = 768
-                            tela = pygame.display.set_mode((largura,altura))
+                            v.largura = 1024
+                            v.altura = 768
+                            v.tela = pygame.display.set_mode((v.largura,v.altura))
                             config = False
                     
-        
-
-menu()
+    
