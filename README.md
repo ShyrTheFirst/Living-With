@@ -37,8 +37,11 @@ CC BY 2.0
 music and sounds can be found on the following sites:
 -----------------------------------------------
 https://www.salamisound.com/pt/sounds-index
+
 http://freesound.org/browse/tags/
+
 https://meowpad.me/pt/
+
 https://www.myinstants.com/index/br/
 
 Credits
