@@ -1,6 +1,7 @@
--------------------------------------------------------------------------------------------------------------------------         Living With - A game by Shyr (or ShyrTheFirst) aka Eduardo Pinho.                       -------- 
---------             Game created for the contest "PyWeek GameJam number 32"                             --------
+       
+Living With - A game by Shyr (or ShyrTheFirst) aka Eduardo Pinho.
 -----------------------------------------------------------------------------------------------------------------
+     Game created for the contest "PyWeek GameJam number 32"
 
 
 Introduction
@@ -10,13 +11,12 @@ This game uses the following libraries: pygame,random, pygame_functions
 If you don't have or don't want to download those libraries, you can still play using the .exe file.
 
 You can see that there are 2 languages for this game. English and Portuguese. Each one will have it's own .exe file inside the folder "*(language)* exe" with the name "run_game.exe". Portuguese is my main language, so sorry for my bad english!
------------------------------------------------------------------------------------------------------------------
 
 How-to-play
 -----------------------------------------------------------------------------------------------------------------
 This game is simple: use the arrow keys to select your option and the return to confirm.
 There are no right or wrong choices, it's just what you want or don't want to do!
------------------------------------------------------------------------------------------------------------------
+
 
 About the game
 -----------------------------------------------------------------------------------------------------------------
@@ -28,19 +28,18 @@ Sometimes, some people just need to be heard. Sometimes they just want to be on 
 IF YOU KNOW SOMEONE THAT NEEDS HELP, CALL FOR HELP.
 IT'S NOT DRAMA, IT'S NOT LAZINESS, IT'S NOT BE A BUM. IT'S SOMETHING SERIOUS AND A LIFE COULD BE IN RISK.
 
-Talk about it, don't pretend it doesn't exist and don't use it to bully others. People need to know about it, need to know what to do and that they will be ok! 
------------------------------------------------------------------------------------------------------------------
+Talk about it, don't pretend it doesn't exist and don't use it to bully others. People need to know about it, need to know what to do and that they will be ok!
 
 Copyright
 -----------------------------------------------------------------------------------------------------------------
 CC BY 2.0
 
 music and sounds can be found on the following sites:
+-----------------------------------------------
 https://www.salamisound.com/pt/sounds-index
 http://freesound.org/browse/tags/
 https://meowpad.me/pt/
 https://www.myinstants.com/index/br/
------------------------------------------------------------------------------------------------------------------
 
 Credits
 -----------------------------------------------------------------------------------------------------------------
@@ -61,4 +60,3 @@ email - edupinho94@gmail.com
 and you can find more info on my github page - https://github.com/ShyrTheFirst
 
 Thanks!
------------------------------------------------------------------------------------------------------------------
