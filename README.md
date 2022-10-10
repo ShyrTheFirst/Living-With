@@ -55,11 +55,16 @@ and
 Ana - the person that helped me the most and encouraged me. I love you!
 
 
+
 For everyone that is testing the game, I hope you understand my message. You all take care!
+
 
 If you want to reach me, ask me anything or just leave a message, you can find me on 
 Discord - Shyr#1773
+
 email - edupinho94@gmail.com
+
 and you can find more info on my github page - https://github.com/ShyrTheFirst
+
 
 Thanks!
